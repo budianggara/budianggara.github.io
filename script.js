@@ -1,6 +1,6 @@
-// =====================================================
-// TAHUN OTOMATIS DI FOOTER
-// =====================================================
+/* =====================================================
+   FOOTER YEAR
+===================================================== */
 
 const yearElement = document.getElementById('year');
 
@@ -9,9 +9,9 @@ if (yearElement) {
 }
 
 
-// =====================================================
-// TOGGLE MENU MOBILE
-// =====================================================
+/* =====================================================
+   MOBILE MENU
+===================================================== */
 
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
@@ -20,27 +20,20 @@ if (menuToggle && navLinks) {
 
   menuToggle.addEventListener('click', () => {
 
-    navLinks.classList.toggle('open');
-
-    const isOpen =
-      navLinks.classList.contains('open');
+    const isOpen = navLinks.classList.toggle('open');
 
     menuToggle.setAttribute(
       'aria-expanded',
-      isOpen
+      isOpen ? 'true' : 'false'
     );
 
-    menuToggle.setAttribute(
-      'aria-label',
-      isOpen
-        ? 'Tutup menu'
-        : 'Buka menu'
-    );
+    menuToggle.textContent =
+      isOpen ? '✕' : '☰';
 
   });
 
 
-  // Tutup menu setelah memilih navigasi
+  /* Close mobile menu after clicking link */
 
   navLinks.querySelectorAll('a').forEach(link => {
 
@@ -53,10 +46,7 @@ if (menuToggle && navLinks) {
         'false'
       );
 
-      menuToggle.setAttribute(
-        'aria-label',
-        'Buka menu'
-      );
+      menuToggle.textContent = '☰';
 
     });
 
@@ -65,10 +55,9 @@ if (menuToggle && navLinks) {
 }
 
 
-// =====================================================
-// LIGHT / DARK MODE
-// DEFAULT = LIGHT
-// =====================================================
+/* =====================================================
+   LIGHT / DARK MODE
+===================================================== */
 
 const themeToggle =
   document.getElementById('themeToggle');
@@ -77,38 +66,46 @@ const htmlElement =
   document.documentElement;
 
 
-// Ambil tema yang pernah disimpan
+/*
+  DEFAULT THEME = LIGHT
+
+  Kalau sebelumnya user sudah memilih tema,
+  gunakan pilihan tersebut.
+
+  Kalau belum pernah memilih,
+  gunakan LIGHT.
+*/
 
 const savedTheme =
-  localStorage.getItem('theme');
+  localStorage.getItem('theme') || 'light';
 
 
-// Jika user sebelumnya memilih Dark,
-// gunakan Dark.
-//
-// Selain itu selalu gunakan Light.
+/* Apply initial theme */
 
-const initialTheme =
-  savedTheme === 'dark'
-    ? 'dark'
-    : 'light';
+if (savedTheme === 'dark') {
+
+  htmlElement.setAttribute(
+    'data-theme',
+    'dark'
+  );
+
+} else {
+
+  htmlElement.setAttribute(
+    'data-theme',
+    'light'
+  );
+
+}
 
 
-// Terapkan tema awal
+/* Update theme button */
 
-htmlElement.setAttribute(
-  'data-theme',
-  initialTheme
-);
+function updateThemeButton() {
 
-
-// =====================================================
-// UPDATE ICON
-// =====================================================
-
-function updateThemeIcon() {
-
-  if (!themeToggle) return;
+  if (!themeToggle) {
+    return;
+  }
 
   const currentTheme =
     htmlElement.getAttribute('data-theme');
@@ -116,36 +113,42 @@ function updateThemeIcon() {
 
   if (currentTheme === 'dark') {
 
-    // Saat Dark Mode aktif,
-    // icon menjadi matahari.
+    /*
+      Website sedang DARK.
+      Icon ☀️ berarti user bisa kembali
+      ke LIGHT MODE.
+    */
 
     themeToggle.textContent = '☀️';
 
     themeToggle.setAttribute(
       'aria-label',
-      'Aktifkan Light Mode'
+      'Gunakan Light Mode'
     );
 
     themeToggle.setAttribute(
       'title',
-      'Aktifkan Light Mode'
+      'Gunakan Light Mode'
     );
 
   } else {
 
-    // Saat Light Mode aktif,
-    // icon menjadi bulan.
+    /*
+      Website sedang LIGHT.
+      Icon 🌙 berarti user bisa berpindah
+      ke DARK MODE.
+    */
 
     themeToggle.textContent = '🌙';
 
     themeToggle.setAttribute(
       'aria-label',
-      'Aktifkan Dark Mode'
+      'Gunakan Dark Mode'
     );
 
     themeToggle.setAttribute(
       'title',
-      'Aktifkan Dark Mode'
+      'Gunakan Dark Mode'
     );
 
   }
@@ -153,57 +156,67 @@ function updateThemeIcon() {
 }
 
 
-// Jalankan pertama kali
+/* Initial button */
 
-updateThemeIcon();
+updateThemeButton();
 
 
-// =====================================================
-// THEME BUTTON CLICK
-// =====================================================
+/* Toggle */
 
 if (themeToggle) {
 
-  themeToggle.addEventListener('click', () => {
+  themeToggle.addEventListener(
+    'click',
+    () => {
 
-    const currentTheme =
-      htmlElement.getAttribute('data-theme');
-
-
-    const newTheme =
-      currentTheme === 'dark'
-        ? 'light'
-        : 'dark';
+      const currentTheme =
+        htmlElement.getAttribute(
+          'data-theme'
+        );
 
 
-    // Terapkan tema
+      if (currentTheme === 'dark') {
 
-    htmlElement.setAttribute(
-      'data-theme',
-      newTheme
-    );
+        /* DARK → LIGHT */
+
+        htmlElement.setAttribute(
+          'data-theme',
+          'light'
+        );
+
+        localStorage.setItem(
+          'theme',
+          'light'
+        );
+
+      } else {
+
+        /* LIGHT → DARK */
+
+        htmlElement.setAttribute(
+          'data-theme',
+          'dark'
+        );
+
+        localStorage.setItem(
+          'theme',
+          'dark'
+        );
+
+      }
 
 
-    // Simpan pilihan user
+      updateThemeButton();
 
-    localStorage.setItem(
-      'theme',
-      newTheme
-    );
-
-
-    // Update icon
-
-    updateThemeIcon();
-
-  });
+    }
+  );
 
 }
 
 
-// =====================================================
-// SCROLL REVEAL ANIMATION
-// =====================================================
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
 
 const reveals =
   document.querySelectorAll('.reveal');
@@ -227,7 +240,9 @@ function revealOnScroll() {
       windowHeight - elementVisible
     ) {
 
-      element.classList.add('visible');
+      element.classList.add(
+        'visible'
+      );
 
     }
 
@@ -241,5 +256,7 @@ window.addEventListener(
   revealOnScroll
 );
 
+
+/* Trigger on initial load */
 
 revealOnScroll();
