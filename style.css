@@ -754,44 +754,28 @@ h1 span {
 
 
 /* =====================================================
-   SKILLS
+   SKILLS (Diperbarui agar Rata Tengah / Center)
 ===================================================== */
 
 .skill-grid {
-
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Membuat kartu otomatis berada di tengah */
   gap: 14px;
-
   margin-top: 38px;
 }
 
 .skill-card {
-
   display: flex;
-
   align-items: center;
-
   gap: 13px;
-
-  padding:
-    14px
-    16px;
-
-  background:
-    var(--card-bg);
-
-  border:
-    1px solid var(--line);
-
+  padding: 14px 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
   border-radius: 14px;
-
-  transition:
-    transform .3s ease,
-    border-color .3s ease;
+  transition: transform .3s ease, border-color .3s ease;
+  width: calc(33.333% - 10px); /* Memastikan lebar pas 3 kolom */
+  max-width: 350px;
 }
 
 .skill-card:hover {
@@ -806,7 +790,6 @@ h1 span {
 
 /* =====================================================
    SKILL ICON
-   ICON DIBUAT BENAR-BENAR CENTER
 ===================================================== */
 
 .skill-icon {
@@ -1697,9 +1680,11 @@ footer {
   }
 
   .skill-grid {
+    justify-content: center;
+  }
 
-    grid-template-columns:
-      repeat(2, 1fr);
+  .skill-card {
+    width: calc(50% - 7px);
   }
 
 }
@@ -1807,8 +1792,8 @@ footer {
 
   .skill-grid {
 
-    grid-template-columns:
-      1fr;
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .skill-card {
