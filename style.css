@@ -1,65 +1,245 @@
-/* =====================================================
-   VARIABLES
-   DEFAULT = LIGHT MODE
-===================================================== */
+// =====================================================
+// TAHUN OTOMATIS DI FOOTER
+// =====================================================
 
-:root {
+const yearElement = document.getElementById('year');
 
-  --bg: #f8fafc;
-  --surface: #ffffff;
-  --surface2: #f1f5f9;
-
-  --text: #0f172a;
-  --muted: #64748b;
-
-  --line: rgba(15,23,42,.10);
-
-  --accent: #0284c7;
-  --accent2: #4f46e5;
-  --green: #10b981;
-
-  --max: 1120px;
-
-  --card-bg:
-    linear-gradient(
-      135deg,
-      rgba(15,23,42,.025),
-      rgba(15,23,42,.005)
-    );
-
-  --window-bg: rgba(226,232,240,.7);
-
-  --header-bg: rgba(248,250,252,.88);
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
 }
 
 
-/* =====================================================
-   DARK MODE
-===================================================== */
+// =====================================================
+// TOGGLE MENU MOBILE
+// =====================================================
 
-[data-theme="dark"] {
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
 
-  --bg: #070b14;
-  --surface: #0d1320;
-  --surface2: #111827;
+if (menuToggle && navLinks) {
 
-  --text: #f4f7fb;
-  --muted: #9aa6b7;
+  menuToggle.addEventListener('click', () => {
 
-  --line: rgba(255,255,255,.09);
+    navLinks.classList.toggle('open');
 
-  --accent: #38bdf8;
-  --accent2: #818cf8;
-  --green: #34d399;
+    const isOpen =
+      navLinks.classList.contains('open');
 
-  --card-bg:
-    linear-gradient(
-      135deg,
-      rgba(255,255,255,.035),
-      rgba(255,255,255,.015)
+    menuToggle.setAttribute(
+      'aria-expanded',
+      isOpen
     );
 
-  --window-bg: rgba(0,0,0,.3);
+    menuToggle.setAttribute(
+      'aria-label',
+      isOpen
+        ? 'Tutup menu'
+        : 'Buka menu'
+    );
 
-  --header-bg: rgba(7,11,20,.78);
+  });
+
+
+  // Tutup menu setelah memilih navigasi
+
+  navLinks.querySelectorAll('a').forEach(link => {
+
+    link.addEventListener('click', () => {
+
+      navLinks.classList.remove('open');
+
+      menuToggle.setAttribute(
+        'aria-expanded',
+        'false'
+      );
+
+      menuToggle.setAttribute(
+        'aria-label',
+        'Buka menu'
+      );
+
+    });
+
+  });
+
 }
+
+
+// =====================================================
+// LIGHT / DARK MODE
+// DEFAULT = LIGHT
+// =====================================================
+
+const themeToggle =
+  document.getElementById('themeToggle');
+
+const htmlElement =
+  document.documentElement;
+
+
+// Ambil tema yang pernah disimpan
+
+const savedTheme =
+  localStorage.getItem('theme');
+
+
+// Jika user sebelumnya memilih Dark,
+// gunakan Dark.
+//
+// Selain itu selalu gunakan Light.
+
+const initialTheme =
+  savedTheme === 'dark'
+    ? 'dark'
+    : 'light';
+
+
+// Terapkan tema awal
+
+htmlElement.setAttribute(
+  'data-theme',
+  initialTheme
+);
+
+
+// =====================================================
+// UPDATE ICON
+// =====================================================
+
+function updateThemeIcon() {
+
+  if (!themeToggle) return;
+
+  const currentTheme =
+    htmlElement.getAttribute('data-theme');
+
+
+  if (currentTheme === 'dark') {
+
+    // Saat Dark Mode aktif,
+    // icon menjadi matahari.
+
+    themeToggle.textContent = '☀️';
+
+    themeToggle.setAttribute(
+      'aria-label',
+      'Aktifkan Light Mode'
+    );
+
+    themeToggle.setAttribute(
+      'title',
+      'Aktifkan Light Mode'
+    );
+
+  } else {
+
+    // Saat Light Mode aktif,
+    // icon menjadi bulan.
+
+    themeToggle.textContent = '🌙';
+
+    themeToggle.setAttribute(
+      'aria-label',
+      'Aktifkan Dark Mode'
+    );
+
+    themeToggle.setAttribute(
+      'title',
+      'Aktifkan Dark Mode'
+    );
+
+  }
+
+}
+
+
+// Jalankan pertama kali
+
+updateThemeIcon();
+
+
+// =====================================================
+// THEME BUTTON CLICK
+// =====================================================
+
+if (themeToggle) {
+
+  themeToggle.addEventListener('click', () => {
+
+    const currentTheme =
+      htmlElement.getAttribute('data-theme');
+
+
+    const newTheme =
+      currentTheme === 'dark'
+        ? 'light'
+        : 'dark';
+
+
+    // Terapkan tema
+
+    htmlElement.setAttribute(
+      'data-theme',
+      newTheme
+    );
+
+
+    // Simpan pilihan user
+
+    localStorage.setItem(
+      'theme',
+      newTheme
+    );
+
+
+    // Update icon
+
+    updateThemeIcon();
+
+  });
+
+}
+
+
+// =====================================================
+// SCROLL REVEAL ANIMATION
+// =====================================================
+
+const reveals =
+  document.querySelectorAll('.reveal');
+
+
+function revealOnScroll() {
+
+  reveals.forEach(element => {
+
+    const windowHeight =
+      window.innerHeight;
+
+    const elementTop =
+      element.getBoundingClientRect().top;
+
+    const elementVisible = 100;
+
+
+    if (
+      elementTop <
+      windowHeight - elementVisible
+    ) {
+
+      element.classList.add('visible');
+
+    }
+
+  });
+
+}
+
+
+window.addEventListener(
+  'scroll',
+  revealOnScroll
+);
+
+
+revealOnScroll();
