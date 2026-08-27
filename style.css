@@ -754,7 +754,7 @@ h1 span {
 
 
 /* =====================================================
-   SKILLS (Diperbarui agar Rata Tengah / Center)
+   SKILLS (Rata Tengah / Center)
 ===================================================== */
 
 .skill-grid {
@@ -774,7 +774,7 @@ h1 span {
   border: 1px solid var(--line);
   border-radius: 14px;
   transition: transform .3s ease, border-color .3s ease;
-  width: calc(33.333% - 10px); /* Memastikan lebar pas 3 kolom */
+  width: calc(33.333% - 10px); /* 3 Kolom di layar besar */
   max-width: 350px;
 }
 
@@ -1684,7 +1684,8 @@ footer {
   }
 
   .skill-card {
-    width: calc(50% - 7px);
+    width: calc(50% - 7px); /* 2 Kolom di tablet, tetap di tengah */
+    max-width: none;
   }
 
 }
@@ -1788,17 +1789,17 @@ footer {
   }
 
 
-  /* SKILLS */
+  /* SKILLS (Tetap Rata Tengah di HP) */
 
   .skill-grid {
-
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
   }
 
   .skill-card {
-
     width: 100%;
+    max-width: 350px;
   }
 
 
