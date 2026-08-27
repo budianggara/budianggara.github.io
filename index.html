@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,41 +15,78 @@
     content="Budi Setiawan, Manual QA Tester, QA Engineer, Quality Assurance, Manual Testing, Automation Testing, Selenium, Postman, Jira"
   >
 
-  <meta name="author" content="Budi Setiawan">
+  <meta
+    name="author"
+    content="Budi Setiawan"
+  >
 
   <title>Budi Setiawan | Manual QA Tester</title>
 
-  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
 </head>
+
 
 <body>
 
-  <!-- =========================
+  <!-- =====================================================
        HEADER / NAVIGATION
-  ========================== -->
+  ====================================================== -->
+
   <header class="site-header">
 
     <nav class="nav container">
 
-      <a class="brand" href="#home">
+      <a
+        class="brand"
+        href="#home"
+        aria-label="Budi Setiawan Home"
+      >
         BS<span>.</span>
       </a>
 
+
       <div class="nav-right">
+
+        <!-- NAVIGATION LINKS -->
 
         <div class="nav-links">
 
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#education">Education</a>
-          <a href="#contact">Contact</a>
+          <a href="#home">
+            Home
+          </a>
+
+          <a href="#about">
+            About
+          </a>
+
+          <a href="#skills">
+            Skills
+          </a>
+
+          <a href="#experience">
+            Experience
+          </a>
+
+          <a href="#projects">
+            Projects
+          </a>
+
+          <a href="#education">
+            Education
+          </a>
+
+          <a href="#contact">
+            Contact
+          </a>
 
         </div>
 
-        <!-- CV -->
+
+        <!-- CV BUTTON -->
+
         <a
           href="assets/cv-budi-setiawan.pdf"
           target="_blank"
@@ -58,19 +96,28 @@
           📄 CV
         </a>
 
-        <!-- Theme -->
+
+        <!-- THEME TOGGLE
+             HANYA 1 TOMBOL -->
+
         <button
           class="theme-toggle"
           id="themeToggle"
-          aria-label="Ganti Tema"
+          type="button"
+          aria-label="Aktifkan Dark Mode"
+          title="Aktifkan Dark Mode"
         >
           🌙
         </button>
 
-        <!-- Mobile Menu -->
+
+        <!-- MOBILE MENU -->
+
         <button
           class="menu-toggle"
+          type="button"
           aria-label="Buka menu"
+          aria-expanded="false"
         >
           ☰
         </button>
@@ -82,12 +129,17 @@
   </header>
 
 
+
   <main>
 
-    <!-- =========================
+    <!-- =====================================================
          HERO
-    ========================== -->
-    <section id="home" class="hero">
+    ====================================================== -->
+
+    <section
+      id="home"
+      class="hero"
+    >
 
       <div class="container hero-grid">
 
@@ -97,15 +149,18 @@
             MANUAL QA TESTER
           </p>
 
+
           <h1>
             Halo, Saya<br>
             <span>Budi Setiawan.</span>
           </h1>
 
+
           <p class="hero-text">
             Berfokus pada software quality assurance melalui
             Manual Testing dan Automation Testing.
           </p>
+
 
           <div class="hero-actions">
 
@@ -116,12 +171,14 @@
               Lihat Project
             </a>
 
+
             <a
               class="btn btn-secondary"
               href="#contact"
             >
               Hubungi Saya
             </a>
+
 
             <a
               class="btn btn-cv"
@@ -135,22 +192,46 @@
           </div>
 
 
-          <!-- Statistik Project -->
+          <!-- QUICK STATS -->
+
           <div class="quick-stats">
 
             <div>
-              <strong>57+</strong>
-              <span>Test Cases</span>
+
+              <strong>
+                57+
+              </strong>
+
+              <span>
+                Test Cases
+              </span>
+
             </div>
 
-            <div>
-              <strong>33</strong>
-              <span>Automation Cases</span>
-            </div>
 
             <div>
-              <strong>8+</strong>
-              <span>Bugs Identified</span>
+
+              <strong>
+                33
+              </strong>
+
+              <span>
+                Automation Cases
+              </span>
+
+            </div>
+
+
+            <div>
+
+              <strong>
+                8+
+              </strong>
+
+              <span>
+                Bugs Identified
+              </span>
+
             </div>
 
           </div>
@@ -158,10 +239,13 @@
         </div>
 
 
-        <!-- Foto -->
+
+        <!-- HERO PHOTO -->
+
         <div class="hero-photo reveal">
 
           <div class="photo-glow"></div>
+
 
           <div class="photo-wrapper">
 
@@ -171,6 +255,7 @@
             >
 
           </div>
+
 
           <div class="floating-card">
 
@@ -187,10 +272,15 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- =====================================================
          ABOUT
-    ========================== -->
-    <section id="about" class="section">
+    ====================================================== -->
+
+    <section
+      id="about"
+      class="section"
+    >
 
       <div class="container two-col">
 
@@ -214,11 +304,13 @@
             pengujian kualitas perangkat lunak.
           </p>
 
+
           <p>
             Terbiasa melakukan functional testing, menyusun
             test case, melakukan API testing, bug reporting,
             serta automation testing.
           </p>
+
 
           <p>
             Saya bekerja secara teliti dan analitis dalam
@@ -233,10 +325,15 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- =====================================================
          SKILLS
-    ========================== -->
-    <section id="skills" class="section section-alt">
+    ====================================================== -->
+
+    <section
+      id="skills"
+      class="section section-alt"
+    >
 
       <div class="container">
 
@@ -258,11 +355,14 @@
         </div>
 
 
-        <!-- Skill Cards -->
+
+        <!-- SKILL CARDS -->
+
         <div class="skill-grid reveal">
 
 
-          <!-- Java -->
+          <!-- JAVA -->
+
           <div class="skill-card">
 
             <div class="skill-icon">
@@ -273,6 +373,7 @@
               >
 
             </div>
+
 
             <div class="skill-info">
 
@@ -289,7 +390,9 @@
           </div>
 
 
-          <!-- Selenium -->
+
+          <!-- SELENIUM -->
+
           <div class="skill-card">
 
             <div class="skill-icon">
@@ -300,6 +403,7 @@
               >
 
             </div>
+
 
             <div class="skill-info">
 
@@ -316,7 +420,9 @@
           </div>
 
 
-          <!-- Postman -->
+
+          <!-- POSTMAN -->
+
           <div class="skill-card">
 
             <div class="skill-icon">
@@ -327,6 +433,7 @@
               >
 
             </div>
+
 
             <div class="skill-info">
 
@@ -343,7 +450,9 @@
           </div>
 
 
-          <!-- Katalon -->
+
+          <!-- KATALON -->
+
           <div class="skill-card">
 
             <div class="skill-icon">
@@ -354,6 +463,7 @@
               >
 
             </div>
+
 
             <div class="skill-info">
 
@@ -370,7 +480,9 @@
           </div>
 
 
-          <!-- Google Sheets -->
+
+          <!-- GOOGLE SHEETS -->
+
           <div class="skill-card">
 
             <div class="skill-icon">
@@ -381,6 +493,7 @@
               >
 
             </div>
+
 
             <div class="skill-info">
 
@@ -397,7 +510,9 @@
           </div>
 
 
-          <!-- GitHub -->
+
+          <!-- GITHUB -->
+
           <div class="skill-card">
 
             <div class="skill-icon">
@@ -408,6 +523,7 @@
               >
 
             </div>
+
 
             <div class="skill-info">
 
@@ -424,7 +540,9 @@
           </div>
 
 
-          <!-- Jira -->
+
+          <!-- JIRA -->
+
           <div class="skill-card">
 
             <div class="skill-icon">
@@ -435,6 +553,7 @@
               >
 
             </div>
+
 
             <div class="skill-info">
 
@@ -451,7 +570,9 @@
           </div>
 
 
-          <!-- IntelliJ IDEA -->
+
+          <!-- INTELLIJ -->
+
           <div class="skill-card">
 
             <div class="skill-icon">
@@ -462,6 +583,7 @@
               >
 
             </div>
+
 
             <div class="skill-info">
 
@@ -480,7 +602,9 @@
         </div>
 
 
-        <!-- Expertise -->
+
+        <!-- EXPERTISE -->
+
         <div class="expertise-list reveal">
 
           <span>Manual Testing</span>
@@ -507,10 +631,15 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- =====================================================
          EXPERIENCE
-    ========================== -->
-    <section id="experience" class="section">
+    ====================================================== -->
+
+    <section
+      id="experience"
+      class="section"
+    >
 
       <div class="container">
 
@@ -531,10 +660,12 @@
         </div>
 
 
+
         <div class="experience-timeline reveal">
 
 
           <!-- BRI -->
+
           <div class="exp-item">
 
             <span class="exp-dot"></span>
@@ -555,6 +686,7 @@
               </span>
 
             </div>
+
 
             <ul class="exp-list">
 
@@ -587,7 +719,9 @@
           </div>
 
 
-          <!-- UI Designer -->
+
+          <!-- UI DESIGNER -->
+
           <div class="exp-item">
 
             <span class="exp-dot"></span>
@@ -607,6 +741,7 @@
               </span>
 
             </div>
+
 
             <ul class="exp-list">
 
@@ -639,7 +774,9 @@
           </div>
 
 
-          <!-- Web Developer -->
+
+          <!-- WEB DEVELOPER -->
+
           <div class="exp-item">
 
             <span class="exp-dot"></span>
@@ -660,6 +797,7 @@
               </span>
 
             </div>
+
 
             <ul class="exp-list">
 
@@ -698,10 +836,15 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- =====================================================
          PROJECTS
-    ========================== -->
-    <section id="projects" class="section section-alt">
+    ====================================================== -->
+
+    <section
+      id="projects"
+      class="section section-alt"
+    >
 
       <div class="container">
 
@@ -723,9 +866,10 @@
         </div>
 
 
-        <!-- PROJECT 1 -->
-        <article class="project-card reveal">
 
+        <!-- PROJECT 1 -->
+
+        <article class="project-card reveal">
 
           <div class="project-image">
 
@@ -741,12 +885,14 @@
 
             </div>
 
+
             <img
-              src="assets/project1.jpg"
+              src="assets/project1.JPG"
               alt="Screenshot hasil pengujian LMS Web Application"
             >
 
           </div>
+
 
 
           <div class="project-content">
@@ -768,6 +914,7 @@
               LMS Web Application
             </h3>
 
+
             <p class="project-subtitle">
               Class Management & Authentication
             </p>
@@ -783,23 +930,54 @@
             <div class="metric-grid">
 
               <div>
-                <strong>35</strong>
-                <span>Manual Test Cases</span>
+
+                <strong>
+                  35
+                </strong>
+
+                <span>
+                  Manual Test Cases
+                </span>
+
               </div>
 
-              <div>
-                <strong>20/20</strong>
-                <span>Automation Passed</span>
-              </div>
 
               <div>
-                <strong>100%</strong>
-                <span>Pass Rate</span>
+
+                <strong>
+                  20/20
+                </strong>
+
+                <span>
+                  Automation Passed
+                </span>
+
               </div>
 
+
               <div>
-                <strong>8</strong>
-                <span>Bugs Identified</span>
+
+                <strong>
+                  100%
+                </strong>
+
+                <span>
+                  Pass Rate
+                </span>
+
+              </div>
+
+
+              <div>
+
+                <strong>
+                  8
+                </strong>
+
+                <span>
+                  Bugs Identified
+                </span>
+
               </div>
 
             </div>
@@ -807,10 +985,21 @@
 
             <div class="tags">
 
-              <span>Manual Testing</span>
-              <span>Selenium</span>
-              <span>Java</span>
-              <span>API Testing</span>
+              <span>
+                Manual Testing
+              </span>
+
+              <span>
+                Selenium
+              </span>
+
+              <span>
+                Java
+              </span>
+
+              <span>
+                API Testing
+              </span>
 
             </div>
 
@@ -824,6 +1013,7 @@
               >
                 Google Sheets ↗
               </a>
+
 
               <a
                 href="https://github.com/budianggara/FinPro-QA-Bootcam"
@@ -840,9 +1030,10 @@
         </article>
 
 
-        <!-- PROJECT 2 -->
-        <article class="project-card reverse reveal">
 
+        <!-- PROJECT 2 -->
+
+        <article class="project-card reverse reveal">
 
           <div class="project-image">
 
@@ -858,12 +1049,14 @@
 
             </div>
 
+
             <img
-              src="assets/project2.jpg"
+              src="assets/project2.JPG"
               alt="Screenshot hasil automation testing Reqres API dan GitHub Gist"
             >
 
           </div>
+
 
 
           <div class="project-content">
@@ -885,6 +1078,7 @@
               Reqres API & GitHub Gist UI
             </h3>
 
+
             <p class="project-subtitle">
               Integrated E2E Automation Testing
             </p>
@@ -901,23 +1095,54 @@
             <div class="metric-grid">
 
               <div>
-                <strong>22</strong>
-                <span>Executed Test Cases</span>
+
+                <strong>
+                  22
+                </strong>
+
+                <span>
+                  Executed Test Cases
+                </span>
+
               </div>
 
-              <div>
-                <strong>9</strong>
-                <span>Manual Cases</span>
-              </div>
 
               <div>
-                <strong>13/13</strong>
-                <span>Automation Passed</span>
+
+                <strong>
+                  9
+                </strong>
+
+                <span>
+                  Manual Cases
+                </span>
+
               </div>
 
+
               <div>
-                <strong>0</strong>
-                <span>Critical Defects</span>
+
+                <strong>
+                  13/13
+                </strong>
+
+                <span>
+                  Automation Passed
+                </span>
+
+              </div>
+
+
+              <div>
+
+                <strong>
+                  0
+                </strong>
+
+                <span>
+                  Critical Defects
+                </span>
+
               </div>
 
             </div>
@@ -925,10 +1150,21 @@
 
             <div class="tags">
 
-              <span>API Testing</span>
-              <span>E2E</span>
-              <span>Automation</span>
-              <span>CRUD</span>
+              <span>
+                API Testing
+              </span>
+
+              <span>
+                E2E
+              </span>
+
+              <span>
+                Automation
+              </span>
+
+              <span>
+                CRUD
+              </span>
 
             </div>
 
@@ -942,6 +1178,7 @@
               >
                 Google Sheets ↗
               </a>
+
 
               <a
                 href="https://github.com/budianggara/TakeHomeTest"
@@ -962,10 +1199,15 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- =====================================================
          EDUCATION
-    ========================== -->
-    <section id="education" class="section">
+    ====================================================== -->
+
+    <section
+      id="education"
+      class="section"
+    >
 
       <div class="container two-col">
 
@@ -985,7 +1227,8 @@
         <div class="timeline reveal">
 
 
-          <!-- Pendidikan Formal -->
+          <!-- PENDIDIKAN FORMAL -->
+
           <div class="timeline-item">
 
             <span class="timeline-dot"></span>
@@ -1010,7 +1253,9 @@
           </div>
 
 
-          <!-- Pendidikan Non Formal -->
+
+          <!-- PENDIDIKAN NON FORMAL -->
+
           <div class="timeline-item">
 
             <span class="timeline-dot"></span>
@@ -1035,6 +1280,7 @@
               Postman, serta database testing & SQL.
             </p>
 
+
             <a
               class="text-link"
               href="https://drive.google.com/file/d/1yzXMtbRPzmhhZ6hdUPKIvG67EBwrhpUe/view?usp=sharing"
@@ -1053,10 +1299,15 @@
     </section>
 
 
-    <!-- =========================
+
+    <!-- =====================================================
          CONTACT
-    ========================== -->
-    <section id="contact" class="section contact-section">
+    ====================================================== -->
+
+    <section
+      id="contact"
+      class="section contact-section"
+    >
 
       <div class="container contact-box reveal">
 
@@ -1066,10 +1317,12 @@
             LET'S WORK TOGETHER
           </p>
 
+
           <h2>
             Siap berkontribusi dalam membangun
             software yang lebih berkualitas.
           </h2>
+
 
           <p>
             Saya terbuka untuk peluang kerja di bidang
@@ -1079,7 +1332,11 @@
         </div>
 
 
+
         <div class="contact-list">
+
+
+          <!-- EMAIL -->
 
           <a href="mailto:budisetiawann337@gmail.com">
 
@@ -1093,6 +1350,9 @@
 
           </a>
 
+
+
+          <!-- WHATSAPP -->
 
           <a
             href="https://wa.me/6281284500994"
@@ -1111,6 +1371,9 @@
           </a>
 
 
+
+          <!-- LINKEDIN -->
+
           <a
             href="https://www.linkedin.com/in/budi-setiiawan/"
             target="_blank"
@@ -1127,6 +1390,9 @@
 
           </a>
 
+
+
+          <!-- GITHUB -->
 
           <a
             href="https://github.com/budianggara"
@@ -1145,7 +1411,9 @@
           </a>
 
 
+
           <!-- CV -->
+
           <a
             href="assets/cv-budi-setiawan.pdf"
             target="_blank"
@@ -1171,9 +1439,11 @@
   </main>
 
 
-  <!-- =========================
+
+  <!-- =====================================================
        FOOTER
-  ========================== -->
+  ====================================================== -->
+
   <footer>
 
     <div class="container footer-inner">
@@ -1191,7 +1461,11 @@
   </footer>
 
 
+
+  <!-- JAVASCRIPT -->
+
   <script src="script.js"></script>
 
 </body>
+
 </html>
