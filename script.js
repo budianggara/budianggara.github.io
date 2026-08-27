@@ -22,6 +22,44 @@ if (menuToggle && navLinks) {
 
     navLinks.classList.toggle('open');
 
+    const isOpen =
+      navLinks.classList.contains('open');
+
+    menuToggle.setAttribute(
+      'aria-expanded',
+      isOpen
+    );
+
+    menuToggle.setAttribute(
+      'aria-label',
+      isOpen
+        ? 'Tutup menu'
+        : 'Buka menu'
+    );
+
+  });
+
+
+  // Tutup menu setelah memilih navigasi
+
+  navLinks.querySelectorAll('a').forEach(link => {
+
+    link.addEventListener('click', () => {
+
+      navLinks.classList.remove('open');
+
+      menuToggle.setAttribute(
+        'aria-expanded',
+        'false'
+      );
+
+      menuToggle.setAttribute(
+        'aria-label',
+        'Buka menu'
+      );
+
+    });
+
   });
 
 }
@@ -29,29 +67,45 @@ if (menuToggle && navLinks) {
 
 // =====================================================
 // LIGHT / DARK MODE
-// DEFAULT = LIGHT MODE
+// DEFAULT = LIGHT
 // =====================================================
 
-const themeToggle = document.getElementById('themeToggle');
-const htmlElement = document.documentElement;
+const themeToggle =
+  document.getElementById('themeToggle');
 
-// Ambil tema yang pernah dipilih user
-const savedTheme = localStorage.getItem('theme');
+const htmlElement =
+  document.documentElement;
 
-// Jika belum pernah memilih tema → LIGHT
-const initialTheme = savedTheme === 'dark'
-  ? 'dark'
-  : 'light';
+
+// Ambil tema yang pernah disimpan
+
+const savedTheme =
+  localStorage.getItem('theme');
+
+
+// Jika user sebelumnya memilih Dark,
+// gunakan Dark.
+//
+// Selain itu selalu gunakan Light.
+
+const initialTheme =
+  savedTheme === 'dark'
+    ? 'dark'
+    : 'light';
 
 
 // Terapkan tema awal
+
 htmlElement.setAttribute(
   'data-theme',
   initialTheme
 );
 
 
-// Update icon tombol
+// =====================================================
+// UPDATE ICON
+// =====================================================
+
 function updateThemeIcon() {
 
   if (!themeToggle) return;
@@ -59,10 +113,12 @@ function updateThemeIcon() {
   const currentTheme =
     htmlElement.getAttribute('data-theme');
 
+
   if (currentTheme === 'dark') {
 
-    // Sedang Dark Mode
-    // Klik untuk kembali ke Light
+    // Saat Dark Mode aktif,
+    // icon menjadi matahari.
+
     themeToggle.textContent = '☀️';
 
     themeToggle.setAttribute(
@@ -77,8 +133,9 @@ function updateThemeIcon() {
 
   } else {
 
-    // Sedang Light Mode
-    // Klik untuk masuk Dark
+    // Saat Light Mode aktif,
+    // icon menjadi bulan.
+
     themeToggle.textContent = '🌙';
 
     themeToggle.setAttribute(
@@ -90,15 +147,21 @@ function updateThemeIcon() {
       'title',
       'Aktifkan Dark Mode'
     );
+
   }
+
 }
 
 
-// Tampilkan icon yang sesuai
+// Jalankan pertama kali
+
 updateThemeIcon();
 
 
-// Klik tombol theme
+// =====================================================
+// THEME BUTTON CLICK
+// =====================================================
+
 if (themeToggle) {
 
   themeToggle.addEventListener('click', () => {
@@ -106,13 +169,15 @@ if (themeToggle) {
     const currentTheme =
       htmlElement.getAttribute('data-theme');
 
+
     const newTheme =
       currentTheme === 'dark'
         ? 'light'
         : 'dark';
 
 
-    // Terapkan tema baru
+    // Terapkan tema
+
     htmlElement.setAttribute(
       'data-theme',
       newTheme
@@ -120,6 +185,7 @@ if (themeToggle) {
 
 
     // Simpan pilihan user
+
     localStorage.setItem(
       'theme',
       newTheme
@@ -127,6 +193,7 @@ if (themeToggle) {
 
 
     // Update icon
+
     updateThemeIcon();
 
   });
@@ -141,6 +208,7 @@ if (themeToggle) {
 const reveals =
   document.querySelectorAll('.reveal');
 
+
 function revealOnScroll() {
 
   reveals.forEach(element => {
@@ -152,6 +220,7 @@ function revealOnScroll() {
       element.getBoundingClientRect().top;
 
     const elementVisible = 100;
+
 
     if (
       elementTop <
@@ -166,9 +235,11 @@ function revealOnScroll() {
 
 }
 
+
 window.addEventListener(
   'scroll',
   revealOnScroll
 );
+
 
 revealOnScroll();
