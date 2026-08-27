@@ -754,7 +754,7 @@ h1 span {
 
 
 /* =====================================================
-   SKILLS (Rata Tengah / Center)
+   SKILLS (4 Kolom per Baris, 2 Baris, Rata Tengah)
 ===================================================== */
 
 .skill-grid {
@@ -763,6 +763,9 @@ h1 span {
   justify-content: center; /* Membuat kartu otomatis berada di tengah */
   gap: 14px;
   margin-top: 38px;
+  max-width: 1040px;      /* Batasi lebar maksimal agar pas 4 kolom */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .skill-card {
@@ -774,8 +777,8 @@ h1 span {
   border: 1px solid var(--line);
   border-radius: 14px;
   transition: transform .3s ease, border-color .3s ease;
-  width: calc(33.333% - 10px); /* 3 Kolom di layar besar */
-  max-width: 350px;
+  width: calc(25% - 11px); /* Tepat 4 kolom dalam 1 baris */
+  min-width: 220px;
 }
 
 .skill-card:hover {
@@ -1684,7 +1687,7 @@ footer {
   }
 
   .skill-card {
-    width: calc(50% - 7px); /* 2 Kolom di tablet, tetap di tengah */
+    width: calc(50% - 7px); /* 2 Kolom di tablet */
     max-width: none;
   }
 
@@ -1789,7 +1792,7 @@ footer {
   }
 
 
-  /* SKILLS (Tetap Rata Tengah di HP) */
+  /* SKILLS (1 Kolom di HP, Rata Tengah) */
 
   .skill-grid {
     flex-direction: row;
